@@ -1,0 +1,63 @@
+img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+header h1 {
+    color: darkgoldenrod;
+    border: 5px solid black;
+    background-color: darkblue;
+    margin: 0;
+    padding: 30px;
+    font-size: 50px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    color: darkgoldenrod;
+    font-size: 40px;
+}
+
+section form {
+    margin: auto;
+    color: darkgoldenrod;
+    font-size: 50px;
+    border: 5px solid black;
+    padding: 100px;
+    width: 60%;
+    border-radius: 25px;
+    display: flex;
+    flex-flow: column wrap;
+    position: relative;
+}
+
+input {
+    padding: 20px;
+    border-radius: 25px;
+}
+
+button {
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer {
+    color: darkgoldenrod;
+    border: 5px solid black;
+    background-color: darkblue;
+    bottom: 0;
+    width: 100%;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+}

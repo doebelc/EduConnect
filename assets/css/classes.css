@@ -1,0 +1,60 @@
+/* Nav links */
+nav.navbar navbar-expand-lg bg-body-tertiary {
+    background-color: red;
+}
+
+/* Nav Container */
+div.container-fluid {
+    background-color: darkblue;
+    padding: 30px;
+    border: 5px solid black;
+}
+
+/* Navbar Left */
+a.navbar-brand {
+    color: white;
+    font-size: 30px;
+}
+
+/* Font Size works but not color */
+a.nav-link {
+    font-size: 30px;
+}
+
+/* .navbar-nav {
+    color: red;
+} */
+
+body h1 {
+    color: darkgoldenrod;
+}
+
+/* Teachers Averages and Chart */
+section h2 {
+    color: darkgoldenrod;
+    font-size: 60px;
+    text-align: center;
+    text-decoration: underline;
+
+}
+
+.teacher-chart {
+    color: darkgoldenrod;
+    border: 5px solid darkblue;
+    border-collapse: collapse;
+    font-size: 25px;
+    width: 90%;
+    margin: auto;
+}
+
+footer {
+    color: darkgoldenrod;
+    border: 5px solid black;
+    background-color: darkblue;
+    bottom: 0;
+    font-size: 30px;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    position: fixed;
+}
