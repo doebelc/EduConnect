@@ -18,6 +18,7 @@
 AS AN elementry school teacher
 I WANT the ability to create a database
 SO THAT I can store and organize information about my students, classes, grades, and student abscences
+TEST
 
 
 #### Acceptance Criteria
