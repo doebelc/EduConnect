@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!--Author Ben: Creating script references for the javascript fiiles to be accessed-->
+    <script defer src="./assets/js/login.js" type="text/javascript"></script>
+    <script defer src="./assets/js/logic.js" type="text/javascript"></script>
     <title>EduConnect</title>
 </head>
 
@@ -15,18 +18,25 @@
     </header>
 
     <main>
-        <img src='./assets/images/teacher-app-background.jpg' alt="chackboard">
+        <!--Author Ben: I commented out the background image line of code below because
+        I couldn't see the error message or really access the submit button with the
+        absolute positioning of the header and footer.-->
+
+        <!--<img src='./assets/images/teacher-app-background.jpg' alt="chackboard">-->
 
         <section>
             <h2>Please Sign-In</h2>
-            <form>
+            <!--Author Ben: making an id value for the form to be used in a media query in javascript-->
+            <form id="form">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username">
 
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password">
-
-                <button type="submit">Sign-In</button>
+                <!--Author Ben: making an id value for the submit button to be accessed in javascript-->
+                <button type="submit" id="signIn">Sign-In</button>
+                <!--Author Ben: making an id value for the error message to be accessed in javascript-->
+                <p id="error"></p>
             </form>
         </section>
     </main>
