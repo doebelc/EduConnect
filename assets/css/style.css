@@ -1,3 +1,24 @@
+/*Author Ben: Perhaps we could come up with some style value variable names
+like the examples commented out below to apply universally to the entire site for
+continuity and to make the code drier.
+
+:root {
+  --light: #fff;
+  --light-accent: #f9f9fb;
+  --dark: #000;
+  --dark-accent: #222;
+  --dark-accent-action: #111;
+  --action: #563d7c;
+  --action-accent: #8570a5;
+  --disabled: #aaa;
+  --error: #ff0022;
+  --circle-color: #ffb100;
+}
+
+
+
+*/
+
 img {
     background-repeat: no-repeat;
     background-size: cover;
@@ -61,3 +82,12 @@ footer {
     text-align: center;
     position: fixed;
 }
+/*
+  IDs Author Ben: adding the styling from challenge 4 with API's for the error message
+*/
+#error {
+    color: red;
+    opacity: .75;
+    position: absolute;
+    bottom: -2rem;
+  }
