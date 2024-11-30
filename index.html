@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <!--Author Ben: Creating script references for the javascript fiiles to be accessed-->
     <script defer src="./assets/js/login.js" type="text/javascript"></script>
-    <script defer src="./assets/js/logic.js" type="text/javascript"></script>
+    <!-- MS: removed logic.js from head because it is not needed for functionaly here-->
+    
+
     <title>EduConnect</title>
 </head>
 
 <body>
     <header>
-        <h1>Welcome! Ready to Start Your Day!</h1>
+        <h1>Welcome to the EduConnect Portal.  </h1> <!--what should this say?-->
     </header>
 
     <main>
@@ -25,7 +27,7 @@
         <!--<img src='./assets/images/teacher-app-background.jpg' alt="chackboard">-->
 
         <section>
-            <h2>Please Sign-In</h2>
+            <h2>Enter username and password</h2>
             <!--Author Ben: making an id value for the form to be used in a media query in javascript-->
             <form id="form">
                 <label for="username">Username:</label>
@@ -34,7 +36,8 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password">
                 <!--Author Ben: making an id value for the submit button to be accessed in javascript-->
-                <button type="submit" id="signIn">Sign-In</button>
+             
+                <button type="submit" id="signIn">submit</button>
                 <!--Author Ben: making an id value for the error message to be accessed in javascript-->
                 <p id="error"></p>
             </form>
@@ -42,9 +45,11 @@
     </main>
 </body>
 
+
 <footer>
-    <h3>GO SPARTANS!!!</h3>
-    <p>&copy; 2024 Teacher Organizer App</p>
+    <!--MS: what phrase and content can we put here-->
+    <h3>What phrase fits? </h3>
+    <p>&copy; 2024 EduConnect </p>
 </footer>
 
 </html>
