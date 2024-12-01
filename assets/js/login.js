@@ -1,5 +1,7 @@
 // Author Ben: accessing the form area of the html to grab values from for the validateLogin function.
-const form = document.querySelector("form");
+
+// MS changed the const form assignment to .getElement for consistency in code
+const form = document.getElementById("form")
 const signInBtn = document.getElementById("signIn");
 
 // Author Ben: This is the basic login function that will check that the login and password
@@ -14,7 +16,7 @@ function validateLogin() {
         document.getElementById("error").innerText = "Username and password fields cannot be blank.";
         return;
     } else {
-        window.location.href = "classes.html";
+        window.location.href = "students.html";
     }
 }
 
