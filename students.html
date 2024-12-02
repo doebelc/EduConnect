@@ -35,7 +35,7 @@
                 <h2 class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
                         aria-expanded="true" aria-controls="collapseOne">
-                        Student List
+                        Algebra
                     </button>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionOne">
@@ -45,7 +45,7 @@
                                 <tr>
                                     <th scope="col">Last Name</th>
                                     <th scope="col">First Name</th>
-                                    <th scope="col">Grades</th>
+                                    <th scope="col">Grade</th>
                                     <th scope="col">Absences</th>
                                 </tr>
                             </thead>
@@ -60,39 +60,11 @@
                 </div>
             </div>
         </div>
+       
 
         <!-- MS: between accodion, tag for average grade. Currently computing for numeric. Function for conversion still needs to be plugged into suitable place(s) in code-->
         <p class ="averageGrades" id="averageGrade"></p>
 
-        <div class="accordion mt-4" id="accordionClasses">
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseClasses"
-                        aria-expanded="true" aria-controls="collapseOne">
-                        Classes 
-                    </button>
-                </h2>
-                <div id="collapseClasses" class="accordion-collapse collapse show" data-bs-parent="#accordionClasses">
-                    <div class="accordion-body">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Time Period</th>
-                                    <th scope="col">Category</th>
-                                    <th scope="col">Assignments</th>
-                                    <th scope="col">Absences</th>
-                                </tr>
-                            </thead>
-
-
-                            <tbody id="studentTable">
-                                <!-- MS:Rows are added dynamically here -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
     </main>
 
 
@@ -107,19 +79,19 @@
                 <div class="modal-body">
                     <form id="studentForm">
                         <div class="mb-3">
-                            <label for="lastName" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="lastName" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="firstName" class="form-label">First Name</label>
+                            <label for="lastName" class="form-label">First Name</label>
                             <input type="text" class="form-control" id="firstName" required>
                         </div>
                         <div class="mb-3">
-                            <label for="grades" class="form-label">Grades</label>
-                            <input type="text" class="form-control" id="grades" required>
+                            <label for="firstName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" required>
                         </div>
                         <div class="mb-3">
-                            <label for="absences" class="form-label">Absences</label>
+                            <label for="grade" class="form-label">Grade</label>
+                            <input type="text" class="form-control" id="grade" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="absences" class="form-label">Absence(s)</label>
                             <input type="number" class="form-control" id="absences" required>
                         </div>
                     </form>

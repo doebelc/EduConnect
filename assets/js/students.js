@@ -7,33 +7,37 @@ Another functionality that could be added is to validate the absences input to e
 function addStudent() {
     const lastName = document.getElementById('lastName').value.trim();
     const firstName = document.getElementById('firstName').value.trim();
-    const grades = document.getElementById('grades').value.trim();
+    const grade = parseInt(document.getElementById('grade').value.trim(), 10);
     const absences = parseInt(document.getElementById('absences').value, 10);
 
-
-    if (!lastName || !firstName || !grades || isNaN(absences)) {
+    if (!lastName || !firstName || isNaN(grade) || grade < 0 || grade > 100 || isNaN(absences)) {
         alert('Please complete all fields correctly.');
         return;
     }
 
-    const student = { lastName, firstName, grades, absences };
+    const student = { lastName, firstName, grade, absences };
     const students = JSON.parse(localStorage.getItem('students')) || [];
+
     students.push(student);
     localStorage.setItem('students', JSON.stringify(students));
 
-    // This required to clear all inputs in and hide modal
     document.getElementById('studentForm').reset();
     const modal = bootstrap.Modal.getInstance(document.getElementById('studentModal'));
     modal.hide();
 
     populateTable();
+
 }
+
+
 
 /* code needed to assist with populating the student table from localStorage; 
 and listing students alphabetically, by last name, 
 and this computes average grade for all students. Success marker. Need to plug in function to convert numbers to letter grade
 All of Ben's code is commented out below for potential plug and play herein, or debug to fulfill remaining desired outcomes
 */
+
+
 function populateTable() {
     const students = JSON.parse(localStorage.getItem('students')) || [];
     students.sort((a, b) => a.lastName.localeCompare(b.lastName));
@@ -41,30 +45,61 @@ function populateTable() {
     tableBody.innerHTML = '';
 
     let totalgrades = 0;
-
+// Ben: added in the convertGradeToLetter function to convert the numerical grade to a
+// letter grade and then include both in the final output to the table.
     students.forEach((student) => {
+        let numberGrade = parseInt(student.grade);
+        const letterGrade = convertGradeToLetter(numberGrade);
         const row = document.createElement('tr');
+
         row.innerHTML = `
             <td>${student.lastName}</td>
             <td>${student.firstName}</td>
-            <td>${student.grades}</td>
+            <td>${student.grade} (${letterGrade})</td>
             <td>${student.absences}</td>
         `;
         tableBody.appendChild(row);
 
-        totalgrades += parseInt(student.grades);
+        totalgrades += parseInt(student.grade);
     });
+// Ben: needed to convert the average numerical answer to a universal variable name that the convertGradeToLetter function can use.
     average = totalgrades / students.length;
-    document.getElementById('averageGrade').textContent = "average grade " + average.toFixed(2);
+    let numberGrade = average;
+// Ben: added a check to make sure the average is a number before displaying it, otherwise the average area should be blank.
+    if (isNaN(numberGrade)) {
+        document.getElementById('averageGrade').textContent = "";
+    }
+    else {
+    document.getElementById('averageGrade').textContent = "Average Grade for the class: " + average.toFixed(2) + " (" + convertGradeToLetter(numberGrade) + ")";
+    }
 }
 
+function convertGradeToLetter(numberGrade) {
+    if (numberGrade >= 97 && numberGrade <= 100) return 'A+';
+    if (numberGrade >= 93 && numberGrade <= 96) return 'A';
+    if (numberGrade >= 90 && numberGrade <= 92) return 'A-';
+    if (numberGrade >= 87 && numberGrade <= 89) return 'B+';
+    if (numberGrade >= 83 && numberGrade <= 86) return 'B';
+    if (numberGrade >= 80 && numberGrade <= 82) return 'B-';
+    if (numberGrade >= 77 && numberGrade <= 79) return 'C+';
+    if (numberGrade >= 73 && numberGrade <= 76) return 'C';
+    if (numberGrade >= 70 && numberGrade <= 72) return 'C-';
+    if (numberGrade >= 67 && numberGrade <= 69) return 'D+';
+    if (numberGrade >= 63 && numberGrade <= 66) return 'D';
+    if (numberGrade >= 60 && numberGrade <= 62) return 'D-';
+    return 'F';
+}
+
+// Ben: added the function to clear all students from localStorage and then repopulate the table, if a user confirms.
 function clearStudents() {
+    if (confirm('Are you sure you want to clear all students?')) {
     localStorage.removeItem('students');
     populateTable();
+    }
+    else {
+        return;
+    }
 }
-
-// MS:This will populate the table whenever the page loads, if there are students in localStorage
-document.addEventListener('DOMContentLoaded', populateTable);  
 
 // MS: Ben's logic.js is below for convenience. And the file is still in the assets folder
  /*// logic.js author ben
