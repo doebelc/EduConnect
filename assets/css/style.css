@@ -1,134 +1,198 @@
-/*Author Ben: Perhaps we could come up with some style value variable names
-like the examples commented out below to apply universally to the entire site for
-continuity and to make the code drier.
-
+/* Global Variables for Consistency */
 :root {
-  --light: #fff;
-  --light-accent: #f9f9fb;
-  --dark: #000;
-  --dark-accent: #222;
-  --dark-accent-action: #111;
-  --action: #563d7c;
-  --action-accent: #8570a5;
-  --disabled: #aaa;
-  --error: #ff0022;
-  --circle-color: #ffb100;
+    --primary: #1e3a8a; /* Deep Blue */
+    --secondary: #f9c74f; /* Gold */
+    --neutral-light: #f9f9fb; /* Light Neutral */
+    --neutral-dark: #222; /* Dark Neutral */
+    --text-light: #ffffff; /* White */
+    --text-dark: #333; /* Dark Text */
+    --border: #ccc; /* Neutral Border */
+    --error: #ff0022; /* Red for Errors */
 }
-*/
 
+.navbar {
+    background-color: #1e3a8a; /* Deep Blue for Navbar Background */
+    border-bottom: 4px solid #f9c74f; /* Gold border for emphasis */
+    padding: 1rem 1.5rem; /* Add spacing */
+}
+
+.navbar .navbar-brand {
+    font-size: 1.5rem; /* Slightly larger font for the brand */
+    font-weight: bold; /* Bold font for prominence */
+    color: #f9c74f; /* Gold color for the brand name */
+    text-decoration: none; /* Remove underline */
+}
+
+.navbar .navbar-toggler {
+    background-color: #f9c74f; /* Gold color for the toggler button */
+    border: none; /* Remove default border */
+}
+
+.navbar .navbar-toggler-icon {
+    background-color: #ffffff; /* White color for toggler icon */
+    border-radius: 50%; /* Rounded icon for a modern look */
+    padding: 0.5rem;
+}
+
+.navbar .nav-link {
+    color: #ffffff; /* White text for navigation links */
+    font-size: 1.1rem; /* Slightly larger font for readability */
+    text-transform: uppercase; /* Optional: Makes links all caps */
+    margin-left: 1rem; /* Spacing between links */
+}
+
+/* Optional: Active link styling */
+.navbar .nav-link.active {
+    color: #f9c74f; /* Gold for active link */
+    font-weight: bold; /* Emphasize the active link */
+}
+
+/* General Reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--neutral-light);
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+/* Image Styling */
 img {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
 }
 
+/* Header Styling */
 header h1 {
-    color: darkgoldenrod;
-    border: 5px solid black;
-    background-color: lightgray;
+    color: var(--secondary);
+    border: none;
+    background-color: var(--primary);
     margin: 0;
-    padding: 30px;
-    font-size: 50px;
+    padding: 20px;
+    font-size: 2.5rem;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
+/* Subheading Styling */
 h2 {
     text-align: center;
-    color: darkgoldenrod;
-    font-size: 40px;
+    color: var(--primary);
+    font-size: 2rem;
+    margin: 1rem 0;
 }
 
-.averageGrades { 
+/* Average Grades Styling */
+.averageGrades {
     text-align: center;
-    border:  2px solid rgb(203, 200, 200);
+    border: 2px solid var(--border);
     padding: 10px;
     width: 25%;
-    margin: 0 auto;
+    margin: 1rem auto;
+    border-radius: 8px;
+    background-color: var(--neutral-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
-#form {
-
-    color: rgb(131, 123, 103);
-    font-size: 40px;
-    border: 5px solid rgb(86, 83, 83);
-    padding: 50px;
-    width: 60%;
-    margin-bottom: 40px;  
-}
-
-section form {
-    margin: auto;
-    color: rgb(131, 123, 103);
-    font-size: 50px;
-    border: 5px solid rgb(87, 84, 84);
-    padding: 100px;
-    width: 60%;
-    border-radius: 25px;
+/* Form Section Styling */
+section form, #form {
+    margin: 2rem auto;
+    color: var(--text-dark);
+    font-size: 1rem;
+    border: 2px solid var(--border);
+    padding: 2rem;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    background-color: var(--neutral-light);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-flow: column wrap;
-    position: relative;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-input {
-    padding: 20px;
-    border-radius: 25px;
+/* Input Fields */
+input, #password {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
 }
 
-/* MS added button styling, background color, font color (white) and size */
+input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 5px rgba(30, 58, 138, 0.5);
+}
+
+/* Button Styling */
 button {
-    padding: 20px;
-    border-radius: 25px;
-    background-color: rgb(82, 81, 79);
-    color: white;
-    font-size: 30px;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    background-color: var(--primary);
+    color: var(--text-light);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+button:hover {
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+/* Flex Container */
 .flex-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1rem;
 }
 
-/* MS: changed color footer temporarily to resolve login and swap file debug  */
+/* Footer Styling */
 footer {
-    color: darkgoldenrod;
-    border: 5px solid rgb(16, 16, 16);
-    background-color: lightgray;
-    bottom: 10px;
+    color: var(--text-light);
+    background-color: var(--primary);
+    bottom: 0;
     width: 100%;
-    font-size: 30px;
+    font-size: 1rem;
     padding: 20px;
     text-align: center;
     position: fixed;
-    margin-top: 25px;
+    border-top: 1px solid var(--border);
 }
 
-/* MS: added primarily to address overlap with footer, added margin-bottom to eliminate overlap with form element section Border 2px from 5px
-muted color, changed to hex */
-#form {
-
-    color: rgb(131, 123, 103);
-    font-size: 25px;
-    border: 2px solid rgb(6, 0, 0);
-    margin-bottom: 25px;
-}
-
-/* MS: entered to add space betwwen password and submit filed and btn */
-#password {
-    display: block; /* Ensures proper spacing for block-level elements */
-    margin-bottom: 30px; /* Adds space below the input */
-}
-
-/*
-  IDs Author Ben: adding the styling from challenge 4 with API's for the error message
-commented out for now. Can be added back in if needed.
-
+/* Error Message Styling */
 #error {
-    color: red;
-    opacity: .75;
+    color: var(--error);
+    opacity: 0.75;
     position: absolute;
     bottom: -2rem;
-  }
-  */
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    section form, #form {
+        width: 90%;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+}
