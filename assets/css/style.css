@@ -166,16 +166,16 @@ button:hover {
 footer {
     color: var(--text-light);
     background-color: var(--primary);
-    bottom: 0;
     width: 100%;
     font-size: 1rem;
     padding: 20px;
     text-align: center;
-    position: relative;
-    min-height: 100vh;
+    position: absolute;
+    bottom: 0;
+    max-height: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     border-top: 1px solid var(--border);
 }
 
