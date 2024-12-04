@@ -216,7 +216,7 @@ function convertAverageGradeToLetter(averageGrade, studentData) {
     if (averageGrade >= 67 && averageGrade <= 69 && studentData != 0) return '(D+)';
     if (averageGrade >= 63 && averageGrade <= 66 && studentData != 0) return '(D)';
     if (averageGrade >= 60 && averageGrade <= 62 && studentData != 0) return '(D-)';
-    if (averageGrade >= 0 && averageGrade <= 59 && studentData != 0) return '(F)';
+    if (averageGrade >= 1 && averageGrade <= 59 && studentData != 0) return '(F)'; //needed to make the averageGarde >= 1 as opposed to 0 otherwise a letter grade of (F) will show up when no students are entered yet.
     return '';
 }
 
