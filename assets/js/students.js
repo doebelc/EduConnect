@@ -84,6 +84,7 @@ function populateAccordions() {
         const averageGrade = calculateAverageGrade(studentData[accordionId] || []);
         const averageLetterGrade = convertAverageGradeToLetter(averageGrade);
         const studentRows = (studentData[accordionId] || [])
+        .sort((a, b) => a.lastName.localeCompare(b.lastName)) //This line will sort the students by last name alphabetically.
             .map(student => `
             <tr>
                 <td>${student.lastName}</td>
@@ -203,19 +204,19 @@ function convertGradeToLetter(grade) {
 }
 
 function convertAverageGradeToLetter(averageGrade, studentData) {
-    if (averageGrade >= 97 && averageGrade <= 100 && !studentData === 0) return '(A+)';
-    if (averageGrade >= 93 && averageGrade <= 96 && !studentData === 0) return '(A-)';
-    if (averageGrade >= 90 && averageGrade <= 92 && !studentData === 0) return '(A)';
-    if (averageGrade >= 87 && averageGrade <= 89 && !studentData === 0) return '(B+)';
-    if (averageGrade >= 83 && averageGrade <= 86 && !studentData === 0) return '(B)';
-    if (averageGrade >= 80 && averageGrade <= 82 && !studentData === 0) return '(B-)';
-    if (averageGrade >= 77 && averageGrade <= 79 && !studentData === 0) return '(C+)';
-    if (averageGrade >= 73 && averageGrade <= 76 && !studentData === 0) return '(C)';
-    if (averageGrade >= 70 && averageGrade <= 72 && !studentData === 0) return '(C-)';
-    if (averageGrade >= 67 && averageGrade <= 69 && !studentData === 0) return '(D+)';
-    if (averageGrade >= 63 && averageGrade <= 66 && !studentData === 0) return '(D)';
-    if (averageGrade >= 60 && averageGrade <= 62 && !studentData === 0) return '(D-)';
-    if (averageGrade >= 0 && averageGrade <= 59 && !studentData === 0) return '(F)';
+    if (averageGrade >= 97 && averageGrade <= 100 && studentData != 0) return '(A+)'; // fixed the studentData conditional argument from !studentData === 0 to studentData != 0
+    if (averageGrade >= 93 && averageGrade <= 96 && studentData != 0) return '(A-)';
+    if (averageGrade >= 90 && averageGrade <= 92 && studentData != 0) return '(A)';
+    if (averageGrade >= 87 && averageGrade <= 89 && studentData != 0) return '(B+)';
+    if (averageGrade >= 83 && averageGrade <= 86 && studentData != 0) return '(B)';
+    if (averageGrade >= 80 && averageGrade <= 82 && studentData != 0) return '(B-)';
+    if (averageGrade >= 77 && averageGrade <= 79 && studentData != 0) return '(C+)';
+    if (averageGrade >= 73 && averageGrade <= 76 && studentData != 0) return '(C)';
+    if (averageGrade >= 70 && averageGrade <= 72 && studentData != 0) return '(C-)';
+    if (averageGrade >= 67 && averageGrade <= 69 && studentData != 0) return '(D+)';
+    if (averageGrade >= 63 && averageGrade <= 66 && studentData != 0) return '(D)';
+    if (averageGrade >= 60 && averageGrade <= 62 && studentData != 0) return '(D-)';
+    if (averageGrade >= 0 && averageGrade <= 59 && studentData != 0) return '(F)';
     return '';
 }
 
