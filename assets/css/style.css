@@ -10,6 +10,17 @@
     --error: #ff0022; /* Red for Errors */
 }
 
+.header-name {
+    background-color: #1e3a8a; /* Deep Blue for Navbar Background */
+    border-bottom: 4px solid #f9c74f; /* Gold border for emphasis */
+    padding: 1rem 1.5rem; /* Add spacing */
+    font-size: 1.5rem; /* Slightly larger font for the brand */
+    font-weight: bold; /* Bold font for prominence */
+    color: #f9c74f; /* Gold color for the brand name */
+    text-decoration: none; /* Remove underline */
+}
+
+
 .navbar {
     background-color: #1e3a8a; /* Deep Blue for Navbar Background */
     border-bottom: 4px solid #f9c74f; /* Gold border for emphasis */
@@ -164,7 +175,7 @@ button:hover {
 
 /* Footer Styling */
 footer {
-    color: var(--text-light);
+    color: var(--secondary);
     background-color: var(--primary);
     width: 100%;
     font-size: 1rem;
