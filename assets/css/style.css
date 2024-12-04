@@ -170,13 +170,18 @@ footer {
     font-size: 1rem;
     padding: 20px;
     text-align: center;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     max-height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-top: 1px solid var(--border);
+    z-index: 1000; /* Ensure footer is above other elements */
+}
+
+body {
+    padding-bottom: 120px; /* Add padding to prevent content from being obscured by the footer */
 }
 
 /* Error Message Styling */
