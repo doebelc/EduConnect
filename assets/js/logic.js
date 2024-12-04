@@ -1,7 +1,8 @@
-// Author Ben: This function will find an average grade of all students in a single class
-// to be displayed at the bottom of each table inside the accordian tabs on the classes page.
-// It should be called in the classes.js file after the table is populated. The examples for all
-// of the functions below are inset slightly on the page to distinguish the from the actual code.
+/* Author Ben: This function will find an average grade of all students in a single class
+to be displayed at the bottom of each table inside the accordian tabs on the classes page.
+ It should be called in the classes.js file after the table is populated. The examples for all
+of the functions below are inset slightly on the page to distinguish the from the actual code.
+*/
 function calculateAverage(grades) {
     if (grades.length === 0) return 0;
 
@@ -17,8 +18,9 @@ function calculateAverage(grades) {
                 const average = calculateAverage(grades);
                 console.log(`The average grade is: ${average}`);
 
-// Author Ben: This function will alphabetize the object students array by the key variable value: lastName.
-// This function should also be called in the classes.js file after the table is populated.
+/* Author Ben: This function will alphabetize the object students array by the key variable value: lastName.
+This function should also be called in the classes.js file after the table is populated.
+*/
 function alphabetizeStudents(students, lastName) {
     return students.sort((a, b) => {
         if (a[lastName] < b[lastName]) return -1;
@@ -36,11 +38,12 @@ function alphabetizeStudents(students, lastName) {
                 const sortedStudents = alphabetizeStudents(students, 'lastName');
                 console.log(sortedStudents);
 
-// Author Ben: This function will convert numerically entered grades into a string value letter
-// grade equivalent to be displayed inside the tables of each accordian tab for individal students.
-// It can also be used to convert the numerical value of the average grade of all of the students
-// to be displayed below that table. This function should also be called in the classes.js file 
-// after the table is populated.                
+/* Author Ben: This function will convert numerically entered grades into a string value letter
+grade equivalent to be displayed inside the tables of each accordian tab for individal students.
+It can also be used to convert the numerical value of the average grade of all of the students
+to be displayed below that table. This function should also be called in the classes.js file 
+after the table is populated. 
+*/               
 function convertGradeToLetter(grade) {
     if (grade >= 97 && grade <= 100) return 'A+';
     if (grade >= 93 && grade <= 96) return 'A-';
